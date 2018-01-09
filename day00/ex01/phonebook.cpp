@@ -60,7 +60,15 @@ int main()
         }
         else if (!input.compare("SEARCH"))
         {
-            for (int j = 0; j < i; j++)
+			if (i > 0)
+			{
+				std::cout << std::endl;
+				std::cout << std::setw(10) << "Index" << "|";
+				std::cout << std::setw(10) << "First Name" << "|";
+				std::cout << std::setw(10) << "Last Name" << "|";
+				std::cout << std::setw(10) << "Nickname" << std::endl;
+			}
+			for (int j = 0; j < i; j++)
             {
                 std::cout << std::setw(10) << j << "|";
                 if (contact[j].first_name.length() > 10)
@@ -77,11 +85,12 @@ int main()
                     std::cout << std::setw(10) << std::right << contact[j].nickname;
                 std::cout << std::endl;
             }
+			std::cout << std::endl;
             if (i > 0)
                 std::cout << "Select your desired index from the above list:   ";
             else
             {
-                std::cout << "No entries to search... Return to beginning" << std::endl;
+                std::cout << "No entries to search..." << std::endl;
                 continue;
             }
             std::string index;
@@ -103,7 +112,7 @@ int main()
             else if (!index.compare("7") && i > 7)
                 print_index(contact[7]);
             else
-                std::cout << "Invalid index... Return to beginning" << std::endl;
+                std::cout << "Invalid index..." << std::endl;
         }
         else
             continue;
