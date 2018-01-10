@@ -10,12 +10,13 @@ public:
     std::string name;
     std::string type;
 
-    Zombie( std::string name );
+    Zombie( void );
     ~Zombie( void );
 
-    void    announce( void ) const;
+    void    announce( std::string type ) const;
 
 };
+
 
 #endif
 

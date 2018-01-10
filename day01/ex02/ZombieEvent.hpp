@@ -13,24 +13,10 @@ public:
     ZombieEvent( void );
     ~ZombieEvent( void );
 
-    void       setZombieType( void );   
-    Zombie*    newZombie( std::string name );
-
+    void		setZombieType( void );   
+    Zombie*		newZombie( std::string name );
+	void		randomChump( void );
 
 };
-
-// class Zombie {
-
-// public:
-
-//     std::string name;
-//     std::string type;
-
-//     Zombie( std::string name );
-//     ~Zombie( void );
-
-//     void    announce( void ) const;
-
-// };
 
 #endif
