@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/10 14:09:03 by jnederlo          #+#    #+#             */
-/*   Updated: 2018/01/10 16:46:35 by jnederlo         ###   ########.fr       */
+/*   Created: 2018/01/10 14:21:57 by jnederlo          #+#    #+#             */
+/*   Updated: 2018/01/10 16:36:37 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#ifndef ZOMBIEHORDE_H
+# define ZOMBIEHORDE_H
 
 #include <iostream>
+#include "Zombie.hpp"
 
-class Zombie {
+class ZombieHorde {
 
 public:
 
-    std::string name;
-    std::string type;
+    Zombie* horde;
+    int     num_zombies;
 
-    Zombie();
-    Zombie( std::string name, std::string type );
-    ~Zombie( void );
-
-    void    announce( std::string name, std::string type );
-    void    announce();
+    ZombieHorde( int N );
+    ~ZombieHorde( void );
+    
+    void    announce( void );
 
 };
 
-
 #endif
-
-

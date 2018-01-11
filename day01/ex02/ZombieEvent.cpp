@@ -1,17 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/01/10 14:08:27 by jnederlo          #+#    #+#             */
+/*   Updated: 2018/01/10 14:11:38 by jnederlo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <iostream>
 #include "ZombieEvent.hpp"
 #include "Zombie.hpp"
-
-std::string z_type [7] = {
-        "Red",
-        "Blue",
-        "Green",
-        "Purple",
-        "Yellow",
-        "Orange",
-        "Black",
-    };
 
 std::string z_name [20] = {
         "Clementine",
@@ -43,32 +44,25 @@ ZombieEvent::ZombieEvent( void ){
 
 ZombieEvent::~ZombieEvent( void ){
 
-    std::cout << "ZombieEvent Destructor was called." << std::endl;
     return;
 }
 
-void	ZombieEvent::setZombieType( void ){
+void	ZombieEvent::setZombieType( std::string type ){
 
-	int rand_type = std::rand() % 8;
-	this->type = z_type[rand_type];
+	this->type = type;
 }
 
 Zombie*	ZombieEvent::newZombie( std::string name ){
 
-	Zombie* a_zombie = new Zombie;
-
-	a_zombie->type = this->type;
-	a_zombie->name = name;
+	Zombie* a_zombie = new Zombie(name, this->type);
 
 	return a_zombie;
 }
 
-void	ZombieEvent::randomChump( void ){
+void	ZombieEvent::randomChump( std::string type ){
 
 	int rand_name = std::rand() % 20;
-	int rand_type = std::rand() % 7;
-	Zombie* random_zombie = new Zombie;
-
-	random_zombie->name = z_name[rand_name];
-	random_zombie->announce(z_type[rand_type]);
+	
+	Zombie random_zombie;
+	random_zombie.announce(z_name[rand_name], type);
 }

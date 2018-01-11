@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Pony.hpp"
 
-Pony::Pony( std::string name ) : name(name), num_legs(4), mammal(1), has_horn(1) {
+Pony::Pony( std::string name ) : name(name), num_legs(4), mammal(1), has_horn(0) {
     return;
 }
 
